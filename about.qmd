@@ -1,5 +1,21 @@
 ---
-title: "About"
+title: "About Me"
+about:
+  template: jolla
+  image: profile.jpg
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/MiHawkStackOverFlow
 ---
 
-About this site
+I am a data scientist and software engineer driven by the challenge of designing intelligent, highly scalable systems. My core ambition is to bridge the gap between advanced machine learning models and robust production environments as an AI/ML Engineer.
+
+Before starting the MDS program at UBC, I spent several years in software development, most recently as a Senior Software Engineer at ResMed and BMC Software. My technical foundation spans Python, JavaScript, backend frameworks like FastAPI, and relational databases. 
+
+Currently, my focus areas include:
+* **Machine Learning & AI:** PyTorch, Scikit-learn, and quantitative AI agents.
+* **MLOps & Infrastructure:** Docker, model deployment, and vector databases.
+* **Core Fundamentals:** Data structures, algorithms, and system design.
+
+When I am not coding or studying linear algebra, you can usually find me running the Vancouver Seawall or exploring new French language media.

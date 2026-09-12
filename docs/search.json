@@ -2,15 +2,15 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site"
+    "text": "I am a data scientist and software engineer driven by the challenge of designing intelligent, highly scalable systems. My core ambition is to bridge the gap between advanced machine learning models and robust production environments as an AI/ML Engineer.\nBefore starting the MDS program at UBC, I spent several years in software development, most recently as a Senior Software Engineer at ResMed and BMC Software. My technical foundation spans Python, JavaScript, backend frameworks like FastAPI, and relational databases.\nCurrently, my focus areas include: * Machine Learning & AI: PyTorch, Scikit-learn, and quantitative AI agents. * MLOps & Infrastructure: Docker, model deployment, and vector databases. * Core Fundamentals: Data structures, algorithms, and system design.\nWhen I am not coding or studying linear algebra, you can usually find me running the Vancouver Seawall or exploring new French language media."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "website",
+    "title": "Abhishek Sharma",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Welcome to my portfolio. I am a Master of Data Science student at the University of British Columbia and an aspiring AI/ML Engineer.\nCurrently, I am focused on building scalable machine learning systems, with a strong emphasis on MLOps, system design, and algorithms. Explore the site to learn more about my background and projects."
   }
 ]

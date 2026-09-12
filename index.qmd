@@ -1,7 +1,7 @@
 ---
-title: "website"
+title: "Abhishek Sharma"
 ---
 
-This is a Quarto website.
+Welcome to my portfolio. I am a Master of Data Science student at the University of British Columbia and an aspiring AI/ML Engineer. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Currently, I am focused on building scalable machine learning systems, with a strong emphasis on MLOps, system design, and algorithms. Explore the site to learn more about my background and projects.
