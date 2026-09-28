@@ -14,5 +14,5 @@ To build this site locally, you must install:
 
 1. **Clone the repository:**
    ```bash
-   git clone git@github.com:mihawkstackoverflow/mihawkstackoverflow.github.io.git
-   cd mihawkstackoverflow.github.io
+   git clone git@github.com:MiHawkStackOverFlow/dsci-521-website.git
+   cd dsci-521-website.git
