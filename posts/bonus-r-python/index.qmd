@@ -1,0 +1,50 @@
+---
+title: "Bonus: R and Python Integration"
+author: "Abhishek Prakash Sharma"
+date: "2026-09-27"
+---
+
+This post demonstrates passing data between R and Python using the `reticulate` package in a single Quarto document.
+
+## Setup
+
+First, we load `reticulate` and point it to the project's `uv` virtual environment so it uses the correct Python installation.
+
+```{r}
+#| message: false
+#| warning: false
+library(reticulate)
+use_virtualenv("../../.venv", required = TRUE)
+```
+
+## Create Data in Python
+
+Let's generate a simple Pandas DataFrame in Python. Notice how we use `{python}` to tell Quarto to switch languages here.
+
+```{python}
+import pandas as pd
+
+python_data = {
+    'species': ['Adelie', 'Chinstrap', 'Gentoo'],
+    'count': [152, 68, 124]
+}
+python_df = pd.DataFrame(python_data)
+print(python_df)
+```
+
+```{r}
+#| message: false
+#| warning: false
+#| label: fig-bonus-plot
+#| fig-cap: "Penguin counts by species, plotted in R from Python data."
+library(ggplot2)
+
+# Access the Python object
+r_df <- py$python_df
+
+ggplot(r_df, aes(x = species, y = count, fill = species)) +
+  geom_col() +
+  theme_minimal() +
+  labs(title = "Penguin Counts (Data from Python, Plot from R)",
+       x = "Species", y = "Count")
+```

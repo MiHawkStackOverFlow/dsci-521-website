@@ -7,13 +7,6 @@
     "text": "I am a data scientist and software engineer driven by the challenge of designing intelligent, highly scalable systems. My core ambition is to bridge the gap between advanced machine learning models and robust production environments as an AI/ML Engineer.\nBefore starting the MDS program at UBC, I spent several years in software development, most recently as a Senior Software Engineer at ResMed and BMC Software. My technical foundation spans Python, JavaScript, backend frameworks like FastAPI, and relational databases.\nCurrently, my focus areas include: * Machine Learning & AI: PyTorch, Scikit-learn, and quantitative AI agents. * MLOps & Infrastructure: Docker, model deployment, and vector databases. * Core Fundamentals: Data structures, algorithms, and system design.\nWhen I am not coding or studying linear algebra, you can usually find me running the Vancouver Seawall or exploring new French language media."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Abhishek Sharma",
-    "section": "",
-    "text": "Welcome to my portfolio. I am a Master of Data Science student at the University of British Columbia and an aspiring AI/ML Engineer.\nCurrently, I am focused on building scalable machine learning systems, with a strong emphasis on MLOps, system design, and algorithms. Explore the site to learn more about my background and projects."
-  },
-  {
     "objectID": "posts/python-analysis/index.html",
     "href": "posts/python-analysis/index.html",
     "title": "Penguin Body Mass Distribution",
@@ -26,5 +19,47 @@
     "title": "Penguin Body Mass Distribution",
     "section": "Setup",
     "text": "Setup\nWe start by importing our necessary Python libraries and loading the dataset.\n\nimport pandas as pd\nimport seaborn as sns\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()\n\n\navg_mass = penguins.groupby('species')['body_mass_g'].mean().reset_index()\navg_mass.columns = ['Species', 'Average Mass (g)']\n\nprint(avg_mass)\n\n     Species  Average Mass (g)\n0     Adelie       3700.662252\n1  Chinstrap       3733.088235\n2     Gentoo       5076.016260\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(8, 5))\nsns.boxplot(data=penguins, x='species', y='body_mass_g')\nplt.xlabel(\"Species\")\nplt.ylabel(\"Body Mass (g)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Body mass distribution of penguins by species."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html",
+    "href": "posts/r-analysis/index.html",
+    "title": "Analyzing Penguin Bill Dimensions",
+    "section": "",
+    "text": "This post explores the Palmer Penguins dataset using R.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#setup",
+    "href": "posts/r-analysis/index.html#setup",
+    "title": "Analyzing Penguin Bill Dimensions",
+    "section": "Setup",
+    "text": "Setup\nWe load the necessary libraries, suppressing startup messages and warnings.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n\nclean_penguins &lt;- penguins |&gt; drop_na()\nhead(clean_penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n6 Adelie  Torgersen           38.9          17.8               181        3625\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\nggplot(clean_penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 2, alpha = 0.8) +\n  theme_minimal() +\n  labs(x = \"Bill Length (mm)\", y = \"Bill Depth (mm)\")\n\n\n\n\n\n\n\nFigure 1: Scatterplot of bill length vs. bill depth by species."
+  },
+  {
+    "objectID": "posts/bonus-r-python/index.html",
+    "href": "posts/bonus-r-python/index.html",
+    "title": "Bonus: R and Python Integration",
+    "section": "",
+    "text": "This post demonstrates passing data between R and Python using the reticulate package in a single Quarto document."
+  },
+  {
+    "objectID": "posts/bonus-r-python/index.html#setup",
+    "href": "posts/bonus-r-python/index.html#setup",
+    "title": "Bonus: R and Python Integration",
+    "section": "Setup",
+    "text": "Setup\nFirst, we load reticulate and point it to the project’s uv virtual environment so it uses the correct Python installation.\n\nlibrary(reticulate)\nuse_virtualenv(\"../../.venv\", required = TRUE)"
+  },
+  {
+    "objectID": "posts/bonus-r-python/index.html#create-data-in-python",
+    "href": "posts/bonus-r-python/index.html#create-data-in-python",
+    "title": "Bonus: R and Python Integration",
+    "section": "Create Data in Python",
+    "text": "Create Data in Python\nLet’s generate a simple Pandas DataFrame in Python. Notice how we use {python} to tell Quarto to switch languages here.\n\nimport pandas as pd\n\npython_data = {\n    'species': ['Adelie', 'Chinstrap', 'Gentoo'],\n    'count': [152, 68, 124]\n}\npython_df = pd.DataFrame(python_data)\nprint(python_df)\n\n     species  count\n0     Adelie    152\n1  Chinstrap     68\n2     Gentoo    124\n\n\n\nlibrary(ggplot2)\n\n# Access the Python object\nr_df &lt;- py$python_df\n\nggplot(r_df, aes(x = species, y = count, fill = species)) +\n  geom_col() +\n  theme_minimal() +\n  labs(title = \"Penguin Counts (Data from Python, Plot from R)\",\n       x = \"Species\", y = \"Count\")\n\n\n\n\n\n\n\nFigure 1: Penguin counts by species, plotted in R from Python data."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Abhishek Sharma",
+    "section": "",
+    "text": "Welcome to my portfolio. I am a Master of Data Science student at the University of British Columbia and an aspiring AI/ML Engineer.\nCurrently, I am focused on building scalable machine learning systems, with a strong emphasis on MLOps, system design, and algorithms. Explore the site to learn more about my background and projects."
   }
 ]
