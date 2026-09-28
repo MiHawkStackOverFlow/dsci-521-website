@@ -11,6 +11,14 @@ website:
       - about.qmd
       - href: blog.qmd
         text: Blog
+      - text: "My Posts"
+        menu:
+          - href: posts/python-analysis/index.qmd
+            text: Python Analysis
+          - href: posts/r-analysis/index.qmd
+            text: R Analysis
+          - href: posts/bonus-r-python/index.qmd
+            text: Bonus Post
 
 format:
   html:
