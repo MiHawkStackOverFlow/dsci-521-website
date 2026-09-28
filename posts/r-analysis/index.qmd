@@ -1,0 +1,33 @@
+---
+title: "Analyzing Penguin Bill Dimensions"
+author: "Abhishek Prakash Sharma"
+date: "2026-09-27"
+---
+
+This post explores the Palmer Penguins dataset using R. 
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+## Setup
+We load the necessary libraries, suppressing startup messages and warnings.
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+clean_penguins <- penguins |> drop_na()
+head(clean_penguins)
+```
+
+```{r}
+#| label: fig-penguin-bills
+#| fig-cap: "Scatterplot of bill length vs. bill depth by species."
+ggplot(clean_penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 2, alpha = 0.8) +
+  theme_minimal() +
+  labs(x = "Bill Length (mm)", y = "Bill Depth (mm)")
+```

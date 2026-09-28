@@ -12,5 +12,19 @@
     "title": "Abhishek Sharma",
     "section": "",
     "text": "Welcome to my portfolio. I am a Master of Data Science student at the University of British Columbia and an aspiring AI/ML Engineer.\nCurrently, I am focused on building scalable machine learning systems, with a strong emphasis on MLOps, system design, and algorithms. Explore the site to learn more about my background and projects."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html",
+    "href": "posts/python-analysis/index.html",
+    "title": "Penguin Body Mass Distribution",
+    "section": "",
+    "text": "This post explores the body mass of penguins using Python.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#setup",
+    "href": "posts/python-analysis/index.html#setup",
+    "title": "Penguin Body Mass Distribution",
+    "section": "Setup",
+    "text": "Setup\nWe start by importing our necessary Python libraries and loading the dataset.\n\nimport pandas as pd\nimport seaborn as sns\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()\n\n\navg_mass = penguins.groupby('species')['body_mass_g'].mean().reset_index()\navg_mass.columns = ['Species', 'Average Mass (g)']\n\nprint(avg_mass)\n\n     Species  Average Mass (g)\n0     Adelie       3700.662252\n1  Chinstrap       3733.088235\n2     Gentoo       5076.016260\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(8, 5))\nsns.boxplot(data=penguins, x='species', y='body_mass_g')\nplt.xlabel(\"Species\")\nplt.ylabel(\"Body Mass (g)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Body mass distribution of penguins by species."
   }
 ]
